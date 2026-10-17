@@ -17,7 +17,16 @@ if ($moyenne >= 10) {
     $resultat     = "Non admis";
     $classeResult = "refus";
 }
-
+// Mention
+if ($moyenne >= 16) {
+    $mention = "Très bien";
+} elseif ($moyenne >= 14) {
+    $mention = "Bien";
+} elseif ($moyenne >= 12) {
+    $mention = "Assez bien";
+} else {
+    $mention = "Passable";
+}
 // Filière
 switch ($filiere) {
     case "Ingenierie Informatique":
@@ -50,6 +59,8 @@ switch ($filiere) {
         <span><?= htmlspecialchars($email) ?></span>
     </div>
     <p class="<?= $classeResult ?>"><?= $resultat ?> (<?= $moyenne ?>/20)</p>
+    <p class="mention">Mention : <?= $mention ?></p>
+
     <?php if ($estBoursier): ?>
         <p>Étudiant boursier</p>
     <?php endif; ?>
