@@ -6,6 +6,8 @@ $filiere     = "Ingenierie Informatique"; // string : filière
 $moyenne     = 15.5;                      // float : moyenne
 $estBoursier = true;                      // bool : boursier ou non
 $anneeEtude  = 2;                         // int : année d'étude
+$email       = "ahmedyassine.kallel@sesame.com.tn"; // string : adresse email
+
 
 // Résultat
 if ($moyenne >= 10) {
@@ -45,6 +47,7 @@ switch ($filiere) {
     <div class="infos">
         <span><?= $age ?> ans</span>
         <span><?= $anneeEtude ?><sup><?= $anneeEtude == 1 ? "re" : "e" ?></sup> année</span>
+        <span><?= htmlspecialchars($email) ?></span>
     </div>
     <p class="<?= $classeResult ?>"><?= $resultat ?> (<?= $moyenne ?>/20)</p>
     <?php if ($estBoursier): ?>
